@@ -19,16 +19,17 @@ namespace Assignment3
                 privacyFilter = true
             };
         var student6 = new Student();
-        var student7 = new Student();
+        var student7 = new Student(13547753);
             var student8 = new Student
             {
                 privacyFilter = true
             };
             var student9 = new Student();
-        var student10 = new Student();
+        var student10 = new Student(17325843);
             student2.EmailAddress = "newEmailAddress@gmail.com";
             student5.Country = "Brazil";
             student7.MailingAddress = "820 Washington Ave N, Madison, SD 57042";
+            student8.PhoneNumber = "605-963-9958";
             student1.Details();
             student2.Details();
             student3.Details();
