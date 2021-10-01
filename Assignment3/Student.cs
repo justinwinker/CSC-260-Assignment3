@@ -18,6 +18,7 @@ namespace Assignment3
         private string _emailAddress;
         private string _phoneNumber;
         private string _mailingAddress;
+        private double _gpa;
         public string log;
         public bool privacyFilter;
         public static int id_count = 0;
@@ -37,6 +38,7 @@ namespace Assignment3
             Console.WriteLine("Populating additional details automatically.");
             StartDate = DateTime.Parse("08/20/2018");
             ExpGradDate = DateTime.Parse("05/18/2023");
+            GPA = 3.5;
             State = "SD";
             Country = "US";
             EmailAddress = "justin.winker@trojans.dsu.edu";
@@ -58,6 +60,7 @@ namespace Assignment3
             StartDate = DateTime.Parse("08/20/2018");
             ExpGradDate = DateTime.Parse("05/18/2023");
             State = "SD";
+            GPA = 4.5;
             Country = "US";
             EmailAddress = "justin.winker@trojans.dsu.edu";
             PhoneNumber = "605-555-9058";
@@ -154,6 +157,34 @@ namespace Assignment3
             }
         }
 
+        public double GPA
+        {
+            get
+            {
+                if (privacyFilter == true)
+                {
+                    return 0.0;
+                }
+                else { return _gpa; }
+            }
+            set
+            {
+                if (value > 4.0)
+                {
+                    _gpa = 4.0;
+                }
+                else if (_gpa < 0.0)
+                {
+                    _gpa = 0.0;
+                }
+                else
+                {
+                    _gpa = value;
+                }
+                log += DateTime.Now.ToString() + " - Set GPA to " + GPA + "\n";
+            }
+        }
+
         public string Country
         {
             get {
@@ -231,6 +262,7 @@ namespace Assignment3
             else
             {
                 details += "\nStudent Major: " + Major;
+                details += "\nStudent GPA: " + GPA;
                 details += "\nStudent Start Date: " + StartDate;
                 details += "\nStudent Anticipated Graduation Date: " + ExpGradDate;
                 details += "\nStudent Home State: " + State;

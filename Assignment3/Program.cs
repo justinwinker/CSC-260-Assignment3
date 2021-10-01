@@ -30,6 +30,8 @@ namespace Assignment3
             student5.Country = "Brazil";
             student7.MailingAddress = "820 Washington Ave N, Madison, SD 57042";
             student8.PhoneNumber = "605-963-9958";
+            student2.GPA = 7.9;
+            student9.GPA = -1.5;
             student1.Details();
             student2.Details();
             student3.Details();
